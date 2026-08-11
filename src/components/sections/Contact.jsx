@@ -125,7 +125,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/amanmishra"
+                  href="https://linkedin.com/in/aman0107"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-5 group"
