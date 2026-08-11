@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, /* Calendar, */ MapPin } from "lucide-react";
 
 const education = [
   {
     degree: "B.Tech in Computer Science & Engineering",
     specialization: "Specialization in Data Science",
-    duration: "",
+    /* duration: "", */
     college:
       "Dr. A.P.J. Abdul Kalam Technical University, Uttar Pradesh",
     description:
@@ -15,7 +15,7 @@ const education = [
   {
     degree: "Bachelor of Science (B.Sc.)",
     specialization: "Mathematics",
-    duration: "",
+    /* duration: "", */
     college:
       "Siddharth University, Uttar Pradesh",
     description:
@@ -87,10 +87,12 @@ const Education = () => {
                     </p>
                   </div>
 
+                  {/*
                   <div className="flex items-center gap-2 bg-slate-800 px-4 py-2 rounded-full text-slate-300 text-sm">
                     <Calendar size={16} />
                     {item.duration}
                   </div>
+                  */}
 
                 </div>
 
