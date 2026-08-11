@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -23,23 +24,35 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  setIsSubmitting(true);
 
-    setIsSubmitting(true);
+  try {
+    await emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      e.target,
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      }
+    );
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormState({
-        name: "",
-        email: "",
-        message: "",
-      });
+    alert("Message sent successfully!");
 
-      alert("Message sent successfully!");
-    }, 1500);
-  };
+    setFormState({
+      name: "",
+      email: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Failed to send message. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section
