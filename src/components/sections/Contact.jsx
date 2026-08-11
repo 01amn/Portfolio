@@ -137,7 +137,7 @@ const Contact = () => {
                   <div>
                     <p className="text-slate-500 text-sm">LinkedIn</p>
                     <p className="text-white font-medium">
-                      linkedin.com/in/amanmishra
+                      linkedin.com/in/aman0107
                     </p>
                   </div>
                 </a>
